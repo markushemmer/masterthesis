@@ -1,0 +1,37 @@
+/* Page Header */
+.page-header {
+    background-color: #04477E;
+    margin: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.page-header h3 {
+	color: #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Navigation-Bar */
+
+.container-fluid {
+	margin-left: 25px;
+	padding-left: 0;
+	font-weight: bold
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Content */
+.content {
+    margin-left: 30px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+}

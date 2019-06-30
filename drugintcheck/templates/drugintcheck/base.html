@@ -5,13 +5,23 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/drugintcheck.css' %}">
     </head>
     <body>
         <div class="page-header">
             <h1><a href="/">Arzneimittel-Wechselwirkungs-Check</a></h1>
-            <h3>by Markus Hemmer</h3>
+            <h3>&copy; Markus Hemmer 2019</h3>
         </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Startseite</a></li>
+                    <li><a href="{% url 'drugintcheck' %}">Wechselwirkungscheck</a></li>
+                    <li><a href="{% url 'drug_list' %}">Arzneimittel-Liste</a></li>
+                    <li><a href="{% url 'company_list' %}">Hersteller-Liste</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
