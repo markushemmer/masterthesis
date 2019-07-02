@@ -1,5 +1,73 @@
 {% extends 'drugintcheck/base.html' %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <div class="container" style="margin-top:30px">
+  		<div class="row">
+    		<div class="col-sm-4">
+     			<h2>Autor_</h2>
+      			<div class="profil_pic_container">
+      				{% load static %}
+      				<img class="profil_pic" src="{% static '/images/markus_profilbild.png' %}">
+      			</div>
+      			<p>Markus Hemmer,<br>M. Sc. Wirtschaftsinformatik<br>Universität Würzburg</p>
+      			<hr/>
+      			<h3>Links_</h3>
+      			<p>Github, meine Universität und<br>die Gelbe Liste.</p>
+      			<ul class="nav nav-pills flex-column">
+      				<li class="nav-item">
+          				<a class="nav-link" href="https://github.com/markushemmer/masterthesis">Code auf Github</a>
+        			</li>
+        			<li class="nav-item">
+          				<a class="nav-link" href="https://www.uni-wuerzburg.de">Universität Würzburg</a>
+        			</li>
+        			<li class="nav-item">
+          				<a class="nav-link" href="https://www.gelbe-liste.de/">Gelbe Liste Pharmaindex</a>
+        			</li>
+      			</ul>
+      			<hr class="d-sm-none">
+    		</div>
+    		<div class="col-sm-8">
+      			<h2>Arzneimittel-Wechselwirkungen.</h2>
+			    <p>Mit zunehmenden Alter nehmen Morbidität und Multimorbidität beim Menschen zu und damit auch das Riskio der sog. Polypharamzie. Gemeint ist damit die gleichzeitige und andauernde Einnahme von mindestens vier oder mehr unterschiedlichen Medikamenten.<br>Die kombinierte Einnahme von Arzneimittlen birgt Gefahren durch Wechselwirkungen. Diese sind nicht nur dem Patienten sondern auch dem behandelden Arzt jedoch nicht immer ausreichend bekannt. Hierdurch kommt es zu ungewollten Nebenwirkungen, die neben dem gesundheitlichen Schaden beim Patienten auch einen erheblichen Kostenfaktor auf Seiten der Krankenkassen darstellen. Der gesamtwirtschaftliche Schaden beläuft sich nach neusten Erkenntnissen auf rund 400 Millionen Euro jährlich.</p>
+			    <p>Der in dieser Masterthesis entwickelte Pilot einer Web-Applikation soll Fehlern bei der Verschreibung von Medikamenten bei Polypharmazie und den damit verbundenen Gesundheitsrisiken präventiv entgegenwirken. Ärzte und Patienten können das Tool nutzen, um mögliche Wechselwirkungen innerhalb ihrer Medikation festzustellen. Der hierfür freundlicherweise zur Verfügung gestellte Datensatz stammt von der Medizinischen Medien Informations GmbH (Gelbe Liste).</p>
+			    <br>
+      			<h2>Funktionen.</h2>
+      			<div class="row">
+				 	<div class="col-md-4">
+				 		<div class="card">
+				 			<img class="card-img-top" src="{% static '/images/molecule.png' %}" alt="Wechselwirkungen">
+    						<div class="card-top">
+    						</div>
+   							<div class="card-body">
+      							<h5 class="card-title">Wechselwirkungs-Check</h5>
+      							<p class="card-text">Testen Sie Ihre Medikamente auf Wechselwirkungen</p>
+      							<a href="{% url 'drugintcheck' %}" class="btn btn-primary stretched-link">> Zum Check</a>
+   							</div>
+  						</div>
+				 	</div>
+				  	<div class="col-md-4">
+				  		<div class="card">
+				  			<img class="card-img-top" src="{% static '/images/drug_bock.png' %}" alt="Arzneimittel-Katalog">
+   							<div class="card-body">
+      							<h5 class="card-title">Arzneimittel von <br>A-Z</h5>
+      							<p class="card-text">Durchsuchen Sie die Datenbank nach Arzneimitteln</p>
+      							<a href="{% url 'drug_list' %}" class="btn btn-primary stretched-link">> Arzneimittel</a>
+   							</div>
+  						</div>
+				  	</div>
+				  	<div class="col-md-4">
+				  		<div class="card">
+				  			<img class="card-img-top" src="{% static '/images/company.png' %}" alt="Hersteller">
+   							<div class="card-body">
+      							<h5 class="card-title">Arzneimittel-Hersteller</h5>
+      							<p class="card-text">Durchsuchen Sie die Datenbank nach Herstellern</p>
+      							<a href="{% url 'company_list' %}" class="btn btn-primary stretched-link">> Hersteller</a>
+   							</div>
+  						</div>
+				  	</div>
+				</div>
+				<br>
+    		</div>
+  		</div>
+	</div>
 {%endblock %}

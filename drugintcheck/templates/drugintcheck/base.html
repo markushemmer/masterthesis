@@ -1,34 +1,48 @@
 {% load static %}
-<html>
+<html lang="de">
     <head>
         <title>Wechselwirkungs-Check</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/drugintcheck.css' %}">
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Arzneimittel-Wechselwirkungs-Check</a></h1>
-            <h3>&copy; Markus Hemmer 2019</h3>
+        <!-- Header -->
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>Arzneimittel-Wechselwirkungs-Check</h1>
+            <p>Masterthesis Markus Hemmer<br>Julius-Maximilians-Universität Würzburg</p> 
         </div>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Startseite</a></li>
-                    <li><a href="{% url 'drugintcheck' %}">Wechselwirkungscheck</a></li>
-                    <li><a href="{% url 'drug_list' %}">Arzneimittel-Liste</a></li>
-                    <li><a href="{% url 'company_list' %}">Hersteller-Liste</a></li>
-                </ul>
-            </div>
+        <!-- Header -->
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'drugintcheck' %}">Wechselwirkungs-Check</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'drug_list' %}">Arzneimittel-Liste</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'company_list' %}">Hersteller-Liste</a>
+                </li>
+            </ul>
         </nav>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-                </div>
+        <br>
+        <!-- Navigation -->
+        <!-- Content -->
+        {% block content %}
+        {% endblock %}
+        <!-- Content -->
+        <!-- Footer -->
+        <footer class="bg-light">
+            <div class="container py-5 text-center">
+                <p class="text-muted">© 2019 Markus Hemmer - Alle Rechte vorbehalten</p>
             </div>
-        </div>
+        </footer>
+        <!-- Footer -->
     </body>
 </html>
