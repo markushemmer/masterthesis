@@ -1,5 +1,37 @@
 {% extends 'drugintcheck/base.html' %}
 
 {% block content %}
-    <h1>Hier entsteht die Funktionalität "Wechselwirkungs-Check"</h1>
+  <div class="container" style="margin-top:30px">
+    <h1>Wechselwirkungs-Check.</h1>
+    <p>Prüfen Sie, ob eines Ihrer eingenommenen Medikamente eine Wechselwirkung mit
+      anderen Medikamenten erzeugt.</p>
+    <form action="" method="get">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-primary">Check starten</button>
+    </form>
+    {% if count_interactions %}
+    <p>Ihr gesuchtes Arzneimittel erzeugt
+      <span id='nmbr_of_inter'>{{ count_interactions }}</span> mögliche Wechselwirkungen
+      mit anderen Medikamenten.</p>
+    <hr>
+    {% endif %}
+    {% if count_interactions == 0 %}
+    <p>Für das gesuchte Medikament sind
+      <span id='nmbr_of_inter'>keine</span> Wechselwirkungen bekannt.</p>
+    {% endif %}
+    <!-- <p>{{submitted_drug}}</p>
+    <hr>
+    <p>{{ get_drugid }}</p>
+    <hr>
+    <p>{{ get_intclass1 }}</p>
+    <hr>
+    <p>{{ interaction_id2 }}</p>
+    <hr>
+    <p>{{ interacting_products }}</p>
+    <hr> -->
+    {% for instance in interaktionen %}
+      <p>{{instance.arzneimittel}} - {{instance.hersteller}}</p>
+    {% endfor %}
+  </div>
 {%endblock %}
